@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TutorHub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+
+<!--
+<head>
+     Paste your Font Awesome Kit code here
+    <script src="https://kit.fontawesome.com" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="your-style.css">
+</head>
+
+-->
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background: linear-gradient(135deg, #93cea5,#9b9b9b,#ffc1c1);
+color:#1f2937;
+}
+
+/* GLOBAL */
+section{
+width:100%;
+max-width:1200px;
+margin:auto;
+padding:60px 20px;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* NAVBAR */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 5%;
+background:rgba(255,255,255,0.6);
+backdrop-filter: blur(10px);
+border-radius:20px;
+margin:15px;
+position: fixed; /* Keeps navbar in place */
+top: 0;          /* Positions it at the very top */
+left: 0;
+width: 98%;     /* Spans full width */
+z-index: 1000;   /* Ensures it stays above other content */
+height: 60px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+height:40px;
+}
+
+.logo h2{
+    font-size: 15px;
+}
+
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:#374151;
+font-weight:500;
+}
+
+.cta-btn{
+padding:10px 20px;
+border-radius:20px;
+background:#111827;
+color:white;
+border:none;
+cursor:pointer;
+transition: background-color 0.3s ease; /* Smooth transition */
+}
+.cta-btn:hover{
+    background-color: #00A86B;
+}
+
+/* MOBILE MENU */
+.menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* HERO */
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.hero-text{
+flex:1;
+min-width:280px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#10b981;
+}
+
+.hero p{
+margin-bottom:30px;
+color:#6b7280;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+cursor: pointer;
+transition: background-color 0.3s ease; /* Smooth transition */
+}
+.hero-buttons:hover{
+    background-color: red;
+}
+
+.btn-primary{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+background:linear-gradient(135deg,#10b981,#0ea5e9);
+color:white;
+cursor:pointer;
+}
+
+.btn-secondary{
+padding:14px 28px;
+border-radius:30px;
+border:1px solid #ccc;
+background:white;
+cursor:pointer;
+}
+
+.hero-img{
+flex:1;
+min-width:280px;
+background:transparent;
+padding:20px;
+border-radius:30px;
+box-shadow:0 20px 50px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+/* FEATURES */
+.section-title{
+text-align:center;
+font-size:36px;
+margin-bottom:40px;
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.6);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+/*ABOUT*/
+
+ .About {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+  }
+
+  .containment {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  /* LEFT IMAGE CARD */
+  .image-card {
+    position:sticky;
+    flex: 1;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  }
+
+  .image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display:flex;
+  }
+
+  /* RIGHT CONTENT */
+  .right {
+    flex: 1;
+  }
+
+  .tag {
+    display: inline-block;
+    background: #f2fff6;
+    color: #d52929;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #111;
+  }
+
+  .text {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+
+  .stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+  }
+
+  .stat-box {
+    background: rgba(255,255,255,0.6);
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .stat-text strong {
+    display: block;
+    font-size: 16px;
+  }
+
+  .stat-text span {
+    font-size: 13px;
+    color: #777;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .About {
+      flex-direction: column;
+    }
+
+    .title {
+      font-size: 28px;
+    }
+  }
+
+
+/* DASHBOARD
+
+.dashboard-box{
+margin-top:30px;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:25px;
+box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+
+.dashboard-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.small-card{
+background:white;
+padding:20px;
+border-radius:15px;
+}
+
+*/
+
+
+/* PRICING */
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.plan{
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.price{
+font-size:36px;
+margin:20px 0;
+color:#10b981;
+}
+
+/* FOOTER */
+footer{
+margin:20px;
+padding:30px;
+border-radius:25px;
+background:#111827;
+color:white;
+text-align:center;
+position:relative;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  max-width: 300px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, #ff6b4a, #ff9f43);
+  padding: 8px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socials span {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2e2d40;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.footer-col {
+  min-width: 200px;
+}
+
+.footer-col h4 {
+  margin-bottom: 20px;
+  font-size: 17px;
+
+}
+
+.footer-col a {
+  display: block;
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: #93cea5;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer {
+    margin: 20px;
+    padding: 30px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+}
+
+
+/* TABLET */
+@media(max-width:768px){
+
+nav{
+position:absolute;
+top:70px;
+right:20px;
+background:white;
+flex-direction:column;
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+display:none;
+}
+
+nav.show{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+}
+
+/* MOBILE */
+@media(max-width:480px){
+
+.section-title{
+font-size:26px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.btn-primary,
+.btn-secondary{
+width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="Images/TutoHUB Ico.ico">
+<h2>TutorHUB</h2>
+</div>
+
+<nav id="navMenu">
+<a href="#">Home</a>
+<a href="#About">About</a>
+<a href="#Features">Features</a>
+<a href="#Pricing">Pricing</a>
+<a href="#Footer">Footer</a>
+</nav>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<button onclick="window.open('https://tutorhubs.lovable.app/signup')" class="cta-btn">Sign up</button>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+<h1><span>AI</span> Powered Schooling & Tutoring Platform </h1>
+<p>Find expert tutors, schedule sessions instantly, learn smarter with Term by Term Content and benefit from the offered AI assistance.</p>
+
+<div class="hero-buttons">
+<button onclick="window.open('https://tutorhubs.lovable.app')" class="btn-primary">Start Learning</button>
+
+<button class="btn-secondary">Learn More</button>
+</div>
+</div>
+
+<div class="hero-img">
+<img src="Images/Laptop Icon TutorHUB.png">
+</div>
+
+</section>
+<!--<section>
+-->
+
+<section id="About">
+  <div class="containment">
+
+    <!-- LEFT -->
+    <div class="image-card">
+      <img src="Images/ABout Picture.avif" alt="Office Team">
+
+    <!-- RIGHT -->
+    <div class="right">
+      <div class="tag">🇿🇦 OUR STORY</div>
+
+      <div class="title">
+        The Future of Tutoring and Schooling      
+    </div>
+
+      <p class="text">
+        Our goal is to become South Africa's leading educational platform where every student can reach their full potential, and every tutor can make a meaningful impact in their community.
+      </p>
+
+      <p class="text">
+        In South Africa, access to quality education remains one of the biggest challenges facing our youth. Many students struggle to find qualified tutors, especially in rural areas where educational resources are limited.
+        TutorHUB was created to bridge this gap. We connect passionate, qualified tutors with students who are eager to learn, making quality education accessible to everyone.
+        Our platform empowers both tutors and students, creating meaningful educational connections that transform lives and build a brighter future for South Africa      
+        </p>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="icon">⭐</div>
+          <div class="stat-text">
+            <strong>4.9/5</strong>
+            <span>2.4k+ Reviews</span>
+          </div>
+        </div>
+
+        <div class="stat-box">
+          <div class="icon">⚡</div>
+          <div class="stat-text">
+            <strong>AI</strong>
+            <span>Assistant</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!--<h2 class="section-title">The Future of Tutoring and Schooling</h2>
+
+<div class="dashboard-box">
+
+<h3> TutorHUB was born from a simple belief: every student deserves access to quality education, regardless of their location or circumstances.
+</h3>
+
+
+
+<div class="dashboard-grid">
+
+<div class="small-card">
+<h4>Upcoming Session</h4>
+<p>Math – 16:00</p>
+</div>
+
+<div class="small-card">
+<h4>AI Assistant</h4>
+<p>Ask anything instantly</p>
+</div>
+
+<div class="small-card">
+<h4>Progress</h4>
+<p>85% improvement</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>-->
+
+<section id="Features">
+
+<h2 class="section-title">Platform Features</h2>
+
+<div class="feature-grid">
+
+<div class="card">
+<h3>Easy Tutor scheduling</h3>
+<p>Find the best tutor instantly and book sessions in seconds</p>
+</div>
+
+<div class="card">
+<h3>AI Incentive Program</h3>
+<p>Use our AI tutoring bot to ask questions, get explanations, and practice exercises across all subjects.</p>
+</div>
+
+<div class="card">
+<h3>Secure Payments</h3>
+<p>Safe and easy payments for students as well as simple payouts to tutors.</p>
+</div>
+
+<div class="card">
+<h3>Progress Tracking</h3>
+<p>Find many functionalities for Tutor and Student within the linked Dashboard</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="Pricing">
+
+<h2 class="section-title">Pricing Plans</h2>
+
+<div class="pricing-grid">
+
+<div class="plan">
+<h3>Starter</h3>
+<div class="price">R49</div>
+<p>Basic AI help</p>
+</div>
+
+<div class="plan">
+<h3>Pro</h3>
+<div class="price">R340/mo</div>
+<p>Unlimited AI + Tutors</p>
+</div>
+
+<div class="plan">
+<h3>Premium</h3>
+<div class="price">R690/mo</div>
+<p>All features unlocked</p>
+</div>
+
+</div>
+
+</section>
+
+<footer id="Footer">
+<div class="Footer">
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-brand">
+      <div class="logo">
+<!--<div class="logo-icon">⚒️</div>-->        
+        <span>TutorHUB</span>
+      </div>
+
+      <p>
+        TutorHUB was born from a simple belief: every student deserves access to quality 
+        education, regardless of their location or circumstances.
+      </p>
+
+      <div class="socials">
+        <span>f</span>
+        <span>t</span>
+        <span>i</span>
+      </div>
+    </div>
+
+    <!-- PLATFORM -->
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="#">Browse Tutors</a>
+      <a href="#">How everything Works</a>
+      <a href="#">Pricing & Fees</a>
+      <a href="#">Trust & Safety</a>
+    </div>
+
+    <!-- COMPANY -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- LEGAL -->
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 TutorHUB (Pty) Ltd.
+  </div>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("navMenu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
